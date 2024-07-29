@@ -1,5 +1,51 @@
 [
     {
+        "id": "IRON_BLOCK",
+        "name": "铁块",
+        "recipeType": "minecraft:crafting_table",
+        "recipe": [
+            {
+                "material": "IRON_INGOT",
+                "name": "铁锭"
+            },
+            {
+                "material": "IRON_INGOT",
+                "name": "铁锭"
+            },
+            {
+                "material": "IRON_INGOT",
+                "name": "铁锭"
+            },
+            {
+                "material": "IRON_INGOT",
+                "name": "铁锭"
+            },
+            {
+                "material": "IRON_INGOT",
+                "name": "铁锭"
+            },
+            {
+                "material": "IRON_INGOT",
+                "name": "铁锭"
+            },
+            {
+                "material": "IRON_INGOT",
+                "name": "铁锭"
+            },
+            {
+                "material": "IRON_INGOT",
+                "name": "铁锭"
+            },
+            {
+                "material": "IRON_INGOT",
+                "name": "铁锭"
+            }
+        ],
+        "output": 1,
+        "research": "",
+        "researchCost": 0
+    },
+    {
         "id": "GRANDMAS_WALKING_STICK",
         "name": "奶奶的拐杖",
         "recipeType": "slimefun:enhanced_crafting_table",
