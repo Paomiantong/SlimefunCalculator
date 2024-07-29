@@ -1,0 +1,32 @@
+.border-base {
+  @apply border-collapse border-solid border-4;
+}
+
+.mc {
+  --bd-color: #011c0f;
+  --bd-primary: #5fad36;
+  --bd-shadow: #0f432c;
+  --bd-light-grey: #616161;
+  --bd-dark-grey: #484a4b;
+  --primary-color: #429335;
+  --dark-grey: #303234;
+  --light-grey: #484a49;
+
+  @apply border-base border-[var(--bd-color)] bg-[var(--bd-color)] gap-[4px] flex;
+
+  .mfloat {
+    @apply border-base border-[var(--bd-primary)] bg-[var(--primary-color)] mb-[4px] relative text-white;
+    &::after {
+      content: "";
+      @apply bg-[var(--bd-shadow)] absolute bottom-[-8px] h-1 w-[calc(100%+8px)] left-[-4px];
+    }
+  }
+
+  .mpanel {
+    @apply border-base border-x-[var(--bd-light-grey)] !border-y-0 bg-[var(--light-grey)] text-white;
+  }
+
+  .dark-mpanel {
+    @apply border-base border-x-[var(--bd-dark-grey)] !border-y-0 bg-[var(--dark-grey)] text-white;
+  }
+}
