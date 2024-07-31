@@ -89,7 +89,12 @@
             v-for="i in detailItem?.recipe?.ingredients"
             @click="changeDetail(i[0].id)"
           >
-            {{ i[0].name }} <AmountSpan :amount="i[1] * detailItem.amount" />
+            {{ i[0].name }}
+            <AmountSpan
+              :amount="
+                (i[1] * detailItem.amount) / detailItem.recipe!.resultAmount
+              "
+            />
           </li>
         </ul>
       </div>
@@ -102,7 +107,12 @@
             @click="changeDetail(id as string)"
           >
             {{ recipeStore.graph[id].name }} 所需
-            <AmountSpan :amount="recipeStore.graph[id].amount * amount" />
+            <AmountSpan
+              :amount="
+                (recipeStore.graph[id].amount * amount) /
+                recipeStore.graph[id].recipe!.resultAmount
+              "
+            />
           </li>
         </ul>
       </div>
