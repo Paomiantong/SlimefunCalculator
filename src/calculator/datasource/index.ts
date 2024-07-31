@@ -1,8 +1,15 @@
 import rawReceipes from "./recipe.json";
+import { pinyin } from "pinyin-pro";
 const items = rawReceipes.map((v: RAWReceipe) => {
   return {
     id: v.id,
     name: v.name,
+    pinyin: pinyin(v.name, { toneType: "none", type: "array" }).join(""),
+    shortPinyin: pinyin(v.name, {
+      toneType: "none",
+      type: "array",
+      pattern: "initial",
+    }).join(""),
   };
 });
 

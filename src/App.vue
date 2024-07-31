@@ -5,7 +5,8 @@
       <div class="mfloat px-4 py-2 text-center">设置</div>
       <div class="mpanel px-4 py-2 flex items-center gap-2">
         <p class="flex justify-between items-center w-full">
-          <span>数字显示为"N组+M个"格式</span><MCSwithcer v-model="config.amountStyle" />
+          <span>数字显示为"N组+M个"格式</span
+          ><MCSwithcer v-model="config.amountStyle" />
         </p>
       </div>
       <div class="mfloat px-4 py-2 text-center">要计算的物品</div>
@@ -137,7 +138,8 @@ const searchItem = debounce(() => {
 }, 300);
 
 const materialsFuse = computed(
-  () => new Fuse(recipeStore.materials, { keys: ["name"] })
+  () =>
+    new Fuse(recipeStore.materials, { keys: ["name", "pinyin", "shortPinyin"] })
 );
 const materials = ref(recipeStore.materials);
 

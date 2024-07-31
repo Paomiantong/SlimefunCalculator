@@ -29,6 +29,9 @@ importers:
       pinia:
         specifier: ^2.1.7
         version: 2.2.0(typescript@5.4.5)(vue@3.4.34(typescript@5.4.5))
+      pinyin-pro:
+        specifier: ^3.24.0
+        version: 3.24.0
       vue:
         specifier: ^3.4.29
         version: 3.4.34(typescript@5.4.5)
@@ -1209,6 +1212,9 @@ packages:
         optional: true
       typescript:
         optional: true
+
+  pinyin-pro@3.24.0:
+    resolution: {integrity: sha512-isJufU5JIc7PQt3otCslixt+xBR1I3dJeXOu50t20BQPvgfzhWVTdDthsSRDiy9ZRRVNxUF3+Y6FCQo2t4HKoQ==}
 
   pirates@4.0.6:
     resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}
@@ -2602,6 +2608,8 @@ snapshots:
       vue-demi: 0.14.10(vue@3.4.34(typescript@5.4.5))
     optionalDependencies:
       typescript: 5.4.5
+
+  pinyin-pro@3.24.0: {}
 
   pirates@4.0.6: {}
 

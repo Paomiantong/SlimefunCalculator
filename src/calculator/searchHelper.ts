@@ -3,7 +3,7 @@ import { take } from "lodash-es";
 import Fuse from "fuse.js";
 
 const fuse = new Fuse(items, {
-  keys: ["name"],
+  keys: ["name", "pinyin", "shortPinyin"],
 });
 
 export function searchRecipe(name: string) {

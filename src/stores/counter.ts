@@ -1,6 +1,13 @@
+import { pinyin } from "pinyin-pro";
 import { computed, ref } from "vue";
 import { defineStore } from "pinia";
 import type { Item, MaterialGraph } from "@/calculator/core/types";
+import type Material from "@/calculator/model/material";
+
+interface ExtMaterial extends Material {
+  pinyin: string;
+  shortPinyin: string;
+}
 
 export const useRecipeStore = defineStore("calc", () => {
   const graph = ref<MaterialGraph>({});
@@ -33,7 +40,16 @@ export const useRecipeStore = defineStore("calc", () => {
 
   const materials = computed(() =>
     Object.entries(graph.value)
-      .map((v) => v[1])
+      .map((v) => {
+        const val = v[1] as ExtMaterial;
+        val.pinyin = pinyin(val.name, { toneType: "none", type: "array" }).join("");
+        val.shortPinyin = pinyin(val.name, {
+          toneType: "none",
+          type: "array",
+          pattern: "initial",
+        }).join("");
+        return val;
+      })
       .sort((a, b) => a.maxLayer - b.maxLayer)
   );
 

@@ -94,14 +94,16 @@ export function loadRecipe(id: string, materialGraph: MaterialGraph) {
             const [material, name, id, amount] = counter.get(
               ingredient!.material
             )!;
-            counter.set(ingredient!.material, [material, name, id, amount + 1]);
+            const added =
+              amount + (ingredient!.amount ? ingredient!.amount : 1);
+            counter.set(ingredient!.material, [material, name, id, added]);
             return;
           }
           counter.set(ingredient!.material, [
             ingredient!.material,
             ingredient!.name,
             id,
-            1,
+            ingredient!.amount ? ingredient!.amount : 1,
           ]);
         });
         // 记录配方所需材料
