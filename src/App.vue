@@ -92,7 +92,7 @@
             {{ i[0].name }}
             <AmountSpan
               :amount="
-                (i[1] * detailItem.amount) / detailItem.recipe!.resultAmount
+                i[1] * Math.ceil(detailItem.amount/ detailItem.recipe!.resultAmount)
               "
             />
           </li>
@@ -109,8 +109,11 @@
             {{ recipeStore.graph[id].name }} 所需
             <AmountSpan
               :amount="
-                (recipeStore.graph[id].amount * amount) /
-                recipeStore.graph[id].recipe!.resultAmount
+                Math.ceil(
+                  amount * detailItem.amount /
+                    recipeStore.graph[id].recipe!.resultAmount
+                )
+                * amount
               "
             />
           </li>
